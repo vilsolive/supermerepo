@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width", initial-scale="1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+        rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Timeregistrering</title>
+  </head>
+
+  <body onload="sjekkTotalt(0)">
+    <main>
+        <div class="container m-5">
+            <h1 class="fw-bolder">Timeregistrering</h1>
+            <div class="px-2 my-4" id="tabellBakgrunn">
+                <table class="table" id="registrerteTimer">
+                    <thead>
+                        <tr>
+                            <th scope="col">Dato</th>
+                            <th scope="col">Timer</th>
+                            <th scope="col">Kommentar</th>
+                            <th scope="col">Valg</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th scope="col" colspan="3">Totalt antall timer:</th>
+                            <th scope="col" id="totalt"></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div id="varselBoks"></div>
+            <form class="was-validated p-3" id="skjema"  onsubmit="return false">
+              <h2 class="py-3">Ny timeregistrering</h2>
+              <div class="row">
+                <div class="col">
+                  <label for="timer" class="form-label">Registrer timer</label>
+                  <input type="number" class="form-control" id="timer" required placeholder="Eks: 8 (kun hele tall)">
+                </div>
+                <div class="col">
+                  <label for="kommentar" class="form-label">Kommentar</label>
+                  <textarea class="form-control" id="kommentar" rows="1" placeholder="Eks: Vanlig arbeidsdag"></textarea>
+                </div>
+              </div>
+              <div class="d-grid gap-2 col-2">
+                <button class="btn btn-success mt-3" type="button" onclick="nyTimeregistrering()">Lagre</button>
+              </div>
+            </form>
+        </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
